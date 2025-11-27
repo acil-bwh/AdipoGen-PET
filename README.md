@@ -8,9 +8,9 @@ The workflow combines CT-based adipose segmentation, custom fat-focused loss fun
 This framework provides a scalable and radiation-sparing alternative for evaluating brown adipose tissue (BAT) and white adipose tissue metabolic activity in both clinical and research settings. It supports population-based studies of BAT prevalence, cardiometabolic health, and disease progression using routine CT scans, enabling metabolic phenotyping without the imaging burden of PET.
 
 🔍 Key Features
-	•	cGAN-based PET prediction from non-contrast CT
-	•	Adipose tissue segmentation with voxel-wise and regional activation estimation
-	•	Fat-enhanced loss function tailored to metabolic signal prediction
-	•	Cross-cohort validation demonstrating reproducibility and generalizability
-	•	PET-like SUV maps without radiotracers or radiation beyond standard CT
-	•	Tools for visualization, region-level quantification, and statistical evaluation
+* cGAN-based PET prediction from non-contrast CT
+* Adipose tissue segmentation with voxel-wise and regional activation estimation
+* Fat-enhanced loss function tailored to metabolic signal prediction
+* Cross-cohort validation demonstrating reproducibility and generalizability
+* PET-like SUV maps without radiotracers or radiation beyond standard CT
+* Tools for visualization, region-level quantification, and statistical evaluation
