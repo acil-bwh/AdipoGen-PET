@@ -1,6 +1,3 @@
-# python training.py --input_h5 /data/DNNData/cy408/NSCLC_Radiogenomics/suvbw_NSCLC.h5 --output_path ./outputs/comparison/fat_masked_QC_histEq_1e-6_200ep_NSCLCtrain_aug20 --context_levels 5 --stride 1 --gpu 0 --fat_masked 1 --nb_elements 4 --fold 0 --lr 1e-6 --sufix 4fold_redo --train_folds 2 --valid_folds 1 --test_folds 1
-
-
 import tensorflow as tf
 from network import CGAN
 from handler import DataHandler, DataSplitter
