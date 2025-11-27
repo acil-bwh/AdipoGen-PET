@@ -1,4 +1,4 @@
-🧬# AdipoGen-PET
+🧬 # AdipoGen-PET
 Quantification of PET Activation in Adipose Tissue from Non-Contrast CT Scans
 
 AdipoGen-PET provides the official code accompanying our study on generating PET-like metabolic activation maps of adipose tissue directly from standard non-contrast CT scans. This repository implements a conditional Generative Adversarial Network (cGAN) designed to estimate regional metabolic activity—traditionally measured using ^18F-FDG PET—without requiring radiotracers, additional radiation exposure, or PET imaging infrastructure.
