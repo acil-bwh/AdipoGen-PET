@@ -1,0 +1,22 @@
+name: adipogen-pet
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - scikit-image
+  - matplotlib
+  - h5py
+  - simpleitk
+  - nibabel
+  - opencv
+  - pydicom
+  - tqdm
+  - pip:
+      - tensorflow[and-cuda]
+      - antspyx>=0.4.2
