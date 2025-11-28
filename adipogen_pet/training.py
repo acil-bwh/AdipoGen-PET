@@ -46,21 +46,6 @@ def pproc_random_shift(ct, pet, mask):
 
 def main(input_h5, output_path, context_levels, stride, sufix, gpu, train_folds, valid_folds, test_folds, fat_masked, nb_elements, fold, lr, sorted_idxs):
     os.environ["CUDA_VISIBLE_DEVICES"]=gpu
-
-    # Datasets loading
-    # ----------------
-#     data_splitter = DataSplitter(train_folds=train_folds,
-#                                  valid_folds=valid_folds,
-#                                  test_folds=test_folds,
-#                                  h5_path=input_h5,
-#                                  ct_key="ct", pet_key="suv",
-#                                  nb_elements=nb_elements,
-#                                  shuffle_training=True,
-#                                  context_levels=context_levels,
-#                                  stride=stride,
-#                                  th_datarange=[fat_HU, muscle_HU],
-# #                                  pproc_func={"train": pproc_function, "validation": None, "test": None},
-#                                  normalization_function=normalization_function)
     
     h5_list = input_h5.split(',')
     data_splitter_list = []
@@ -88,11 +73,8 @@ def main(input_h5, output_path, context_levels, stride, sufix, gpu, train_folds,
     dis_lr = lr
     fold_list = range(total_folds) if fold is None else [fold]
     for i in fold_list:
-#         train_dh, valid_dh, test_dh = data_splitter.get_fold_handlers(i)
-#         data_splitter_list[0].set_testing_mode(True)
         train_dh, valid_dh, test_dh = data_splitter_list[0].get_fold_handlers(i)
         for dsi in range(1, len(data_splitter_list)):
-#             data_splitter_list[dsi].set_testing_mode(True)
             trn, vld, tst = data_splitter_list[dsi].get_fold_handlers(i)
             train_dh.merge(trn)
             del trn
@@ -124,9 +106,6 @@ def main(input_h5, output_path, context_levels, stride, sufix, gpu, train_folds,
                     kernel_size=4, strides=(2, 2), n_slices=context_levels*2+1, fat_masked=fat_masked)
 
         cGAN.fit(train_dh, EPOCHS, valid_dh)
-
-#         if test_dh is not None:
-#             cGAN.eval_network(test_dh, output_path)
 
 
 if __name__=="__main__":
